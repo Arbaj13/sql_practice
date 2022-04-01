@@ -89,10 +89,73 @@
 -- (SELECT location.id FROM location WHERE zipcode=20011));
 
 
--- TODO: Q15) Insert new vehicle type Hatchback and rental value: 33.88.
+-- -- TODO: Q15) Insert new vehicle type Hatchback and rental value: 33.88.
 
-INSERT INTO vehicle_type (name,rental_value)
-VALUES("Hatchback",33.88)
+-- INSERT INTO vehicle_type (name,rental_value)
+-- VALUES("Hatchback",33.88);
+
+
+-- TODO:   Q16 Add new fuel option Pre-paid (refunded)
+
+
+
+
+-- INSERT INTO fuel_option (name,description)
+-- VALUES("Pre-paid (refunded)","Customer buy a tank of fuel at pick-up and get refunded the amount customer don’t use");
+
+-- TODO:   Q17 Assign the insurance : Cover My Belongings (PEP), Cover The Car (LDW) to the
+--         rental started on 25-08-2020 (created in Q2) by customer (Driving License:K59042656E).
+
+
+
+
+-- INSERT INTO rental_has_insurance (rental_id,insurance_id)
+-- VALUES((SELECT rental.id FROM rental LEFT JOIN customer ON customer.id=rental.customer_id
+-- WHERE driver_license_number="K59042656E"),
+-- (SELECT insurance.id from insurance WHERE name="Cover My Belongings (PEP)")),
+-- ((SELECT rental.id FROM rental LEFT JOIN customer ON customer.id=rental.customer_id
+-- WHERE driver_license_number="K59042656E"),
+-- (SELECT insurance.id from insurance WHERE name="Cover The Car (LDW)"));
+
+
+
+
+-- TODO:  Q18  Remove equipment_type :Satellite Radio from rental started on 2018-07-14 and ended on 2018-07-23.
+
+-- DELETE FROM  rental_has_equipment_type WHERE
+
+-- rental_has_equipment_type.rental_id=(SELECT rental.id FROM rental WHERE 
+-- rental.start_date="2018-07-14" AND rental.end_date="2018-07-23")
+-- AND
+-- rental_has_equipment_type.equipment_type_id=(SELECT equipment_type.id FROM equipment_type 
+-- WHERE name="Satellite Radio");
+
+
+-- TODO:   Q19 Update phone to 510-624-4188 of customer (Driving License: K59042656E)
+
+-- UPDATE customer SET phone="510-624-4188 " WHERE driver_license_number="K59042656E";
+
+
+
+-- TODO:   Q20 INCREASE the insurance cost of Cover The Car (LDW) by 5.65.
+
+
+-- UPDATE insurance SET cost=(SELECT cost +"5.65")
+-- WHERE insurance.name="Cover The Car (LDW)";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

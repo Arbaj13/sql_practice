@@ -62,12 +62,12 @@
 -- TODO: Q5  Fetch all details of vehicles.
 
 
-SELECT vehicle.id ,vehicle.brand,vehicle.model,vehicle.model_year,vehicle.mileage,
-vehicle.color,vehicle_type.name,
-CONCAT(location.street_address," ",location.city," ",location.state," ",location.zipcode)
-AS current_location
-FROM vehicle LEFT JOIN vehicle_type ON vehicle_type.id=vehicle.vehicle_type_id
-LEFT  JOIN  location ON location.id=vehicle.current_location_id;
+-- SELECT vehicle.id ,vehicle.brand,vehicle.model,vehicle.model_year,vehicle.mileage,
+-- vehicle.color,vehicle_type.name,
+-- CONCAT(location.street_address," ",location.city," ",location.state," ",location.zipcode)
+-- AS current_location
+-- FROM vehicle LEFT JOIN vehicle_type ON vehicle_type.id=vehicle.vehicle_type_id
+-- LEFT  JOIN  location ON location.id=vehicle.current_location_id;
 
 
 

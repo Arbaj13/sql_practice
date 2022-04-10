@@ -112,21 +112,11 @@
 -- movie with Drama and Comedy. Assign these categories to the movie.
 
 
-INSERT INTO film_category(film_id,category_id)
-VALUES
-((SELECT film_id FROM film WHERE film.title="HARPER DYING"),
-(SELECT category_id from category WHERE name="Drama")),
-((SELECT film_id FROM film WHERE film.title="HARPER DYING"),
-(SELECT category_id from category WHERE name="Comedy"))
-ON DUPLICATE KEY UPDATE film_id =VALUES(film_id),category_id=
-VALUES(category_id);
-
-
-
--- INSERT INTO `film_category`(`category_id`, `film_id`) VALUES
--- ((SELECT category_id FROM category WHERE category.name="Drama"),
--- (SELECT film_id FROM film WHERE film.title ="HARPER DYING")),
--- ((SELECT category_id FROM category WHERE category.name="Comedy"),
--- (SELECT film_id FROM film WHERE film.title ="HARPER DYING"))
--- ON DUPLICATE KEY UPDATE film_id = VALUES(film_id) , category_id = 
+-- INSERT INTO film_category(film_id,category_id)
+-- VALUES
+-- ((SELECT film_id FROM film WHERE film.title="HARPER DYING"),
+-- (SELECT category_id from category WHERE name="Drama")),
+-- ((SELECT film_id FROM film WHERE film.title="HARPER DYING"),
+-- (SELECT category_id from category WHERE name="Comedy"))
+-- ON DUPLICATE KEY UPDATE film_id =VALUES(film_id),category_id=
 -- VALUES(category_id);

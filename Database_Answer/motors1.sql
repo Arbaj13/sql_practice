@@ -88,16 +88,5 @@
 -- WHERE orders.status="resolved";
 
 
--- TODO: Q11) Get the details of the customer who made the maximum payment.
 
 
-SELECT payments.customer_id,customers.first_name,customers.last_name
-FROM payments
-LEFT JOIN customers ON customers.customer_id=payments.customer_id
-WHERE payments.amount=(SELECT MAX(amount) FROM payments)
-;
-
-
--- SELECT * FROM customers RIGHT JOIN payments 
--- ON customers.customer_id = payments.customer_id
--- WHERE payments.amount = (SELECT MAX(amount) from payments);
